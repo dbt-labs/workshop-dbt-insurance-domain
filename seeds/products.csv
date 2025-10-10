@@ -1,0 +1,6 @@
+product_key,name,coverage_type
+PRD001,Auto Basic,Liability
+PRD002,Auto Plus,Comprehensive
+PRD003,Auto Premium,Full Coverage
+PRD004,Auto Rental,Rental Coverage
+PRD005,Auto Glass,Glass Coverage

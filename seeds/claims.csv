@@ -1,0 +1,6 @@
+claim_key,policy_key,report_date,incident_date,claim_status,claim_cause,loss_amount
+C001,POL001,2025-09-10,2025-09-08,closed,Collision,3500
+C002,POL002,2025-07-02,2025-07-01,closed,Weather,1200
+C003,POL003,2025-05-20,2025-05-18,closed,Theft,2500
+C004,POL004,2025-10-05,2025-10-04,open,Collision,4000
+C005,POL005,2025-08-05,2025-08-03,closed,Glass,600

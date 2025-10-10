@@ -1,0 +1,10 @@
+# dbt build artifacts
+target/
+dbt_packages/
+logs/
+.venv/
+*.duckdb
+*.duckdb.wal
+
+
+dbt_internal_packages/

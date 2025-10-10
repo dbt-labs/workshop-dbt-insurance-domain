@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_date
+  - name: dim_agency
+  - name: dim_policyholder
+  - name: dim_product
+  - name: dim_vehicle
+  - name: dim_policy
+  - name: fct_claims
+  - name: fct_premiums
+
+

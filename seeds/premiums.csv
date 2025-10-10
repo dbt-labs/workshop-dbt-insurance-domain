@@ -1,0 +1,6 @@
+policy_key,effective_date,gross_premium_amount,fees,discounts,net_premium_amount
+POL001,2025-01-01,1200,50,100,1150
+POL002,2025-03-01,900,25,50,875
+POL003,2025-05-01,1600,60,0,1660
+POL004,2025-07-01,700,20,0,720
+POL005,2025-09-01,500,10,25,485

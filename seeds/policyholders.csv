@@ -1,0 +1,6 @@
+policyholder_key,first_name,last_name,date_of_birth,gender,email,phone,address,city,state,zip
+PH001,Alex,Johnson,1980-03-12,M,alex.johnson@example.com,5551212,123 Main St,New York,NY,10001
+PH002,Samantha,Williams,1992-07-25,F,samantha.williams@example.com,555-8734,45 Ocean Dr,Miami,FL,33101
+PH003,Michael,Brown,1975-11-05,M,michael.brown@example.com,(312)555-9988,789 Lake Ave,Chicago,IL,60601
+PH004,Emily,Davis,1988-02-17,F,emily.davis@example.com,800.444.9090,12 Elm St,Denver,CO,80201
+PH005,Chris,Miller,1995-09-09,M,chris.miller@example.com,+1 206 777 1212,901 Pine Rd,Seattle,WA,98101

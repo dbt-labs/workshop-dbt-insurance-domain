@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_agencies
+  - name: stg_policyholders
+  - name: stg_products
+  - name: stg_policies
+  - name: stg_vehicles
+  - name: stg_claims
+  - name: stg_claim_payouts
+
+

@@ -1,0 +1,8 @@
+agency_key,name,region,email,phone,channel_type
+A001,Smith Insurance Group,Midwest,info@smithinsure.com,555-1212,Independent Agent
+A002,Anderson Family Insurance,Northeast,anderson@afiagency.com,555-8734,Independent Agent
+A003,Direct Online Sales,National,online@insurer.com,800-776-4737,Direct
+A004,Customer Care Call Center East,East Coast,callcenter_east@insurer.com,800-123-4567,Direct
+A005,Commercial Brokers Network,National,brokers@insurer.com,800-987-6543,Broker
+A006,Retail Affinity Program,West Coast,retailpartners@insurer.com,800-555-9087,Partner
+A007,CompareQuotes.com Aggregator,National,support@comparequotes.com,800-432-1111,Aggregator

@@ -1,0 +1,6 @@
+claim_key,payout_key,payout_date,payout_amount,payout_type
+C001,PY001,2025-09-20,3000,Repair
+C001,PY002,2025-09-25,200,Rental
+C002,PY003,2025-07-07,1000,Repair
+C003,PY004,2025-05-28,2400,Settlement
+C005,PY005,2025-08-07,500,Glass

@@ -1,0 +1,25 @@
+name: "insurance_dbt"
+version: "1.0.0"
+config-version: 2
+
+profile: "insurance_dbt"
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+test-paths: ["tests"]
+
+models:
+  insurance_dbt:
+    +persist_docs:
+      relation: true
+      columns: true
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  insurance_dbt:
+    +quote_columns: false

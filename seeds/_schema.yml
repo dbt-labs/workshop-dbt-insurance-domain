@@ -1,0 +1,140 @@
+version: 2
+
+seeds:
+  - name: agencies
+    description: Master list of insurance agencies.
+    columns:
+      - name: agency_key
+        description: Natural key for the agency.
+      - name: name
+        description: Agency legal or doing-business-as name.
+      - name: region
+        description: Geographic region descriptor.
+      - name: email
+        description: Contact email address.
+      - name: phone
+        description: Contact phone number.
+      - name: channel_type
+        description: Sales channel classification (e.g., Direct, Broker).
+
+  - name: policyholders
+    description: Individual customers who hold insurance policies.
+    columns:
+      - name: policyholder_key
+        description: Natural key for the policyholder.
+      - name: first_name
+        description: First name.
+      - name: last_name
+        description: Last name.
+      - name: date_of_birth
+        description: Date of birth (YYYY-MM-DD).
+      - name: gender
+        description: Gender as provided.
+      - name: email
+        description: Contact email.
+      - name: phone
+        description: Raw phone number text.
+      - name: address
+        description: Street address.
+      - name: city
+        description: City.
+      - name: state
+        description: State (2-letter code).
+      - name: zip
+        description: Postal code.
+
+  - name: products
+    description: Insurance product catalog.
+    columns:
+      - name: product_key
+        description: Natural key for the product.
+      - name: name
+        description: Product display name.
+      - name: coverage_type
+        description: Coverage category (e.g., Liability, Comprehensive).
+
+  - name: vehicles
+    description: Vehicles covered by policies.
+    columns:
+      - name: vehicle_key
+        description: Vehicle Identification Number (VIN).
+      - name: make
+        description: Vehicle manufacturer.
+      - name: model
+        description: Vehicle model.
+      - name: year
+        description: Model year.
+      - name: vehicle_type
+        description: Body type/classification.
+
+  - name: policies
+    description: Policies tying policyholders, agencies, products, and vehicles.
+    columns:
+      - name: policy_id
+        description: Natural key for the policy.
+      - name: policy_number
+        description: Human-readable policy identifier.
+      - name: policyholder_key
+        description: Reference to policyholders.policyholder_key.
+      - name: agency_key
+        description: Reference to agencies.agency_key.
+      - name: product_id
+        description: Reference to products.product_key.
+      - name: vehicle_key
+        description: Reference to vehicles.vehicle_key.
+      - name: start_date
+        description: Policy effective start date.
+      - name: end_date
+        description: Policy end/expiration date.
+      - name: policy_status
+        description: Policy lifecycle status (e.g., active, expired).
+
+  - name: premiums
+    description: Premium transactions by policy and effective date.
+    columns:
+      - name: policy_key
+        description: Reference to policies.policy_id.
+      - name: effective_date
+        description: Effective date for the premium.
+      - name: gross_premium_amount
+        description: Gross premium before fees/discounts.
+      - name: fees
+        description: Additional fees applied.
+      - name: discounts
+        description: Discounts applied.
+      - name: net_premium_amount
+        description: Net premium after fees and discounts.
+
+  - name: claims
+    description: Reported claims against policies.
+    columns:
+      - name: claim_key
+        description: Natural key for the claim.
+      - name: policy_key
+        description: Reference to policies.policy_id.
+      - name: report_date
+        description: Date the claim was reported.
+      - name: incident_date
+        description: Date of the incident/loss.
+      - name: claim_status
+        description: Status of the claim (e.g., open, closed).
+      - name: claim_cause
+        description: Primary cause/category of the claim.
+      - name: loss_amount
+        description: Reported loss amount.
+
+  - name: claim_payouts
+    description: Payments made for claims.
+    columns:
+      - name: claim_key
+        description: Reference to claims.claim_key.
+      - name: payout_key
+        description: Natural key for the payout record.
+      - name: payout_date
+        description: Date of payout.
+      - name: payout_amount
+        description: Amount paid.
+      - name: payout_type
+        description: Type/category of payout (e.g., Repair, Rental, Settlement).
+
+
