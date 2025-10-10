@@ -1,4 +1,4 @@
-## Insurance dbt Project (Snowflake + Seeds)
+## Insurance dbt Project
 
 This project models a small insurance domain using dbt with seed CSVs as raw sources. It builds clean staging models and a simple star schema mart for analytics.
 
