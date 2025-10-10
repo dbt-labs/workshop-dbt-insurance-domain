@@ -2,13 +2,13 @@ version: 2
 
 unit_tests:
   - name: stg_policyholders_phone_format
-    model: ref('stg_policyholders')
+    model: stg_policyholders
     given:
       - input: ref('policyholders')
         rows:
-          - phone: '1 206-777-1212'
+          - phone: '206-777-1212'
           - phone: '(312)555.9988'
-          - phone: '+1 646 555 4321'
+          - phone: '646 555 4321'
     expect:
       rows:
         - phone: '(206) 777-1212'

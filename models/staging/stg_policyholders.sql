@@ -9,8 +9,31 @@ renamed as (
     cast(date_of_birth as date) as date_of_birth,
     upper(trim(gender)) as gender,
     lower(trim(email)) as email,
-    -- Normalize phone to (XXX) XXX-XXXX
-    regexp_replace(regexp_replace(regexp_replace(trim(phone), '[^0-9]', ''), '^(1)?(\d{10})$', '\2'), '^(\d{3})(\d{3})(\d{4})$', '(\1) \2-\3') as phone,
+    -- Normalize phone to (XXX) XXX-XXXX (strip non-digits, drop leading 1)
+    (
+      '(' || substr(
+        case
+          when length(regexp_replace(trim(phone), '[^0-9]', '')) = 11
+               and left(regexp_replace(trim(phone), '[^0-9]', ''), 1) = '1'
+            then substr(regexp_replace(trim(phone), '[^0-9]', ''), 2, 10)
+          else regexp_replace(trim(phone), '[^0-9]', '')
+        end, 1, 3
+      ) || ') ' || substr(
+        case
+          when length(regexp_replace(trim(phone), '[^0-9]', '')) = 11
+               and left(regexp_replace(trim(phone), '[^0-9]', ''), 1) = '1'
+            then substr(regexp_replace(trim(phone), '[^0-9]', ''), 2, 10)
+          else regexp_replace(trim(phone), '[^0-9]', '')
+        end, 4, 3
+      ) || '-' || substr(
+        case
+          when length(regexp_replace(trim(phone), '[^0-9]', '')) = 11
+               and left(regexp_replace(trim(phone), '[^0-9]', ''), 1) = '1'
+            then substr(regexp_replace(trim(phone), '[^0-9]', ''), 2, 10)
+          else regexp_replace(trim(phone), '[^0-9]', '')
+        end, 7, 4
+      )
+    ) as phone,
     trim(address) as address,
     trim(city) as city,
     upper(trim(state)) as state,
