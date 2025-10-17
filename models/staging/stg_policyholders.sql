@@ -8,8 +8,8 @@ renamed as (
     initcap(trim(last_name)) as last_name,
     cast(date_of_birth as date) as date_of_birth,
     upper(trim(gender)) as gender,
-    --lower(trim(email)) as email,
-    null as email, 
+    lower(trim(email)) as email,
+    --null as email, 
     -- Normalize phone to (XXX) XXX-XXXX (strip non-digits, drop leading 1)
     (
       '(' || substr(
