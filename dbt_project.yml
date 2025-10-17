@@ -19,6 +19,7 @@ models:
       +materialized: view
     marts:
       +materialized: table
+      +access: public
 
 seeds:
   insurance_dbt:
