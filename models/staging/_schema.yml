@@ -45,11 +45,6 @@ models:
         description: The ZIP code of the policyholder's address.
         data_tests:
           - not_null
-      - name: loss_amount
-        description: The total loss amount for the claim
-        data_tests:
-          - dbt_expectations.expect_column_values_to_be_between:
-              min_value: 0
     description: This model standardizes and cleanses policyholder data, ensuring consistent formatting for names, phone numbers, and addresses. It is used to provide a reliable source of policyholder information for downstream processes and analytics.
   - name: stg_products
   - name: stg_policies
