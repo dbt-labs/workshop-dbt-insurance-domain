@@ -8,6 +8,27 @@ models:
   - name: dim_vehicle
   - name: dim_policy
   - name: fct_claims
+    columns:
+      - name: claim_id
+        description: A unique identifier for each claim.
+      - name: policy_id
+        description: The identifier for the policy associated with the claim.
+      - name: report_date
+        description: The date when the claim was reported.
+      - name: incident_date
+        description: The date when the incident leading to the claim occurred.
+      - name: claim_status
+        description: The current status of the claim, such as open or closed.
+      - name: claim_cause
+        description: The reason or cause of the claim.
+      - name: loss_amount
+        description: The total claim amount paid out per policy
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+      - name: total_payout_amount
+        description: The total amount paid out for the claim.
+      - name: outstanding_amount
+        description: The remaining amount to be paid for the claim after payouts.
+    description: This model consolidates claim data with payout information to provide a comprehensive view of each claim, including the total payout and outstanding amount. It is useful for analyzing claim statuses, causes, and financial impacts.
   - name: fct_premiums
-
-
